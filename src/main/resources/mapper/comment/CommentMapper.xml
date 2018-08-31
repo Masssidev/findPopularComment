@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.naver.mapper.CommentMapper">
+    <select id="findCommentsByPostId" parameterType="java.lang.Integer" resultType="Comment">
+    <bind name="start" value="(param2 - 1) * 20" />
+      	SELECT *
+        FROM comment
+        WHERE post_id = #{param1}
+        ORDER BY empathy desc
+		LIMIT ${start}, 20;
+    </select>
+</mapper>
