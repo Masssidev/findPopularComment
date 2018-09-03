@@ -19,7 +19,7 @@ public class CommentServiceImpl implements CommentService {
 
 	@Override
 	@Cacheable(value = "comments", key = "#pg")
-	public List<Comment> findCommentsByPostId(int postId, int pg) {
-		return commentMapper.findCommentsByPostId(postId, pg);
+	public List<Comment> findCommentsByPostId(String postId, String pg) {
+		return commentMapper.findCommentsByPostId(Integer.parseInt(postId), Integer.parseInt(pg));
 	}
 }

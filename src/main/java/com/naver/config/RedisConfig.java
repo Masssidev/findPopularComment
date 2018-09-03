@@ -37,11 +37,12 @@ public class RedisConfig {
 
 		return redisTemplate;
 	}
-	
+
 	@Bean
 	public CacheManager cacheManager(RedisTemplate<String, Object> redisTemplate) {
 		RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
-		cacheManager.setDefaultExpiration(100);
+		cacheManager.setDefaultExpiration(10);
 		return cacheManager;
 	}
+
 }

@@ -29,7 +29,7 @@ public class CommentController {
 	 */
 	@GetMapping(value = "comments/{postId}/{pg}")
 	public ResponseEntity<List<Comment>> findCommentsByPostId(@PathVariable final int postId, @PathVariable final int pg) {
-		final List<Comment> commentsByPostId = commentService.findCommentsByPostId(postId, pg);
+		final List<Comment> commentsByPostId = commentService.findCommentsByPostId(String.valueOf(postId), String.valueOf(pg));
 
 		if (commentsByPostId.isEmpty()) {
 			return new ResponseEntity<List<Comment>>(HttpStatus.NO_CONTENT);
