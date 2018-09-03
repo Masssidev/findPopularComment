@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import com.naver.dto.Comment;
 import com.naver.mapper.CommentMapper;
 
+/**
+ * CommentService Implementation
+ */
 @Service
 public class CommentServiceImpl implements CommentService {
 	@Autowired

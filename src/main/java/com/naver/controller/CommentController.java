@@ -12,13 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 import com.naver.dto.Comment;
 import com.naver.service.CommentService;
 
+/**
+ * CommentController class
+ */
 @RestController
 public class CommentController {
 	@Autowired
 	private CommentService commentService;
 
+	/**
+	 * find All comments by post ID
+	 * 
+	 * @param userId
+	 * @param pg page number
+	 * @return ResponseEntity<Void>
+	 */
 	@GetMapping(value = "comments/{postId}/{pg}")
-	public ResponseEntity<List<Comment>> findCommentsByPostId(@PathVariable int postId, @PathVariable int pg) {
+	public ResponseEntity<List<Comment>> findCommentsByPostId(@PathVariable final int postId, @PathVariable final int pg) {
 		final List<Comment> commentsByPostId = commentService.findCommentsByPostId(postId, pg);
 
 		if (commentsByPostId.isEmpty()) {
