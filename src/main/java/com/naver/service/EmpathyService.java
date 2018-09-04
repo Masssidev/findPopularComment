@@ -9,4 +9,6 @@ public interface EmpathyService {
 	 * @param commentId
 	 */
 	public abstract void insertEmpathy(int postId, int commentId);
+	
+	public abstract void recordEmpathyCount();
 }
