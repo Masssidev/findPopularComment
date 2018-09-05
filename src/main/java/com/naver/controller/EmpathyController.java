@@ -30,4 +30,9 @@ public class EmpathyController {
 
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+	
+	@GetMapping(value = "start")
+	public void start() {
+		empathyService.recordEmpathyCount();
+	}
 }

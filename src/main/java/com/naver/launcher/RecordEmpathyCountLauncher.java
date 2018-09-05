@@ -17,7 +17,7 @@ public class RecordEmpathyCountLauncher {
 	@Autowired
 	private EmpathyService empathyService;
 	
-	@Scheduled (cron = "*/1 * * * * *")
+	//@Scheduled (cron = "*/1 * * * * *")
 	private void recordEmpathyCount(){
 		empathyService.recordEmpathyCount();
 	}

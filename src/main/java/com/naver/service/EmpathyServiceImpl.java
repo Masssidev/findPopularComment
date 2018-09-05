@@ -48,7 +48,7 @@ public class EmpathyServiceImpl implements EmpathyService {
 
 		for (int i = 0; i < 3000; ++i) {
 			commentId = listOperations.leftPop("empathyComments");
-
+			System.out.println(commentId);
 			if (commentId == null)
 				return empathyCount;
 

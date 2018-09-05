@@ -4,10 +4,10 @@
 
 <mapper namespace="com.naver.mapper.EmpathyMapper">
 	
-	<update id="updateEmpathyCount" parameterType="java.util.Map">
-		<foreach collection="list" item="commentId" index="index" separator=";">
-        	UPDATE comment SET empathy = empathy+1
-        	WHERE id = #{commentId}
+	<update id="updateEmpathyCount" parameterType="java.util.HashMap">
+		<foreach collection="list" item="item" separator=";">
+        	UPDATE comment SET empathy = empathy + #{item.value}
+        	WHERE id = #{item.key}
     	</foreach> 
 	</update>
 	
