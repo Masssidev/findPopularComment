@@ -8,5 +8,6 @@
     </typeAliases>
     <mappers>
         <mapper resource="mapper/comment/CommentMapper.xml"/>
+        <mapper resource="mapper/empathy/EmpathyMapper.xml"/>
     </mappers>
 </configuration>
