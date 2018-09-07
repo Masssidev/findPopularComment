@@ -25,6 +25,7 @@ public class EmpathyDaoImpl implements EmpathyDao {
 				System.out.println("이미 공감한 댓글입니다.");
 			else {
 				listOperations.rightPush("empathyComments", i);
+				setOperations.add("empathyUsers:" + i, i);
 			}
 		}
 	}
