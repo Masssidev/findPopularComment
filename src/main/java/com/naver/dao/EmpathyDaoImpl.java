@@ -19,14 +19,12 @@ public class EmpathyDaoImpl implements EmpathyDao {
 
 	@Override
 	public void insertEmpathy(int userId, int commentId) {
-		for (int i = 0; i < 3000; ++i) {
-			if (setOperations.isMember("empathyUsers:" + i, i))
-				// TODO logger로 변경
-				System.out.println("이미 공감한 댓글입니다.");
-			else {
-				listOperations.rightPush("empathyComments", i);
-				setOperations.add("empathyUsers:" + i, i);
-			}
+		if (setOperations.isMember("empathyUsers:" + userId, commentId))
+			// TODO logger로 변경
+			System.out.println("이미 공감한 댓글입니다.");
+		else {
+			listOperations.rightPush("empathyComments", commentId);
+			setOperations.add("empathyUsers:" + userId, commentId);
 		}
 	}
 

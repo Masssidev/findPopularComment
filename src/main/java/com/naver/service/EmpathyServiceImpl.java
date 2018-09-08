@@ -1,6 +1,5 @@
 package com.naver.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.annotation.Resource;
@@ -37,14 +36,8 @@ public class EmpathyServiceImpl implements EmpathyService {
 
 		if(empathyCount.isEmpty())
 			return;
-		else {
-			ArrayList<HashMap<Integer, Integer>> empathyDatas = new ArrayList<HashMap<Integer, Integer>>();
-			empathyDatas.add(empathyCount);
-			for(int i = 0; i<empathyDatas.size(); ++i) {
-				System.out.println(empathyDatas.get(i).get(i));
-			}
-			empathyMapper.updateEmpathyCount(empathyDatas);
-		}
+		else 
+			empathyMapper.updateEmpathyCount(empathyCount);
 	}
 
 	private HashMap<Integer, Integer> resultEmpathyCount() {
